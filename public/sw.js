@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moi-market-pro-shell-v2';
+const CACHE_NAME = 'moi-market-pro-shell-v3';
 const SHELL = [
   './', './index.html', './dashboard.html', './roles-portal.html',
   './roles-portal.css', './roles-portal.js', './roles-integration.js',
