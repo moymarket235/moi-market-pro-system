@@ -112,5 +112,5 @@
   document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.action)));
   try{const saved=JSON.parse(localStorage.getItem('mmp-demo-profile')||'null');if(saved&&typeof saved==='object')state.user={...state.user,...saved};const st=Number(localStorage.getItem('mmp-demo-store'));if(st>=1&&st<=5)state.store=st}catch{}
   renderRoles();
-show('roleView');
+show('loginView');
 })();
