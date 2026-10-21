@@ -1,9 +1,52 @@
-const CACHE_NAME = 'moi-market-pro-shell-v1';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/app-icon.svg', './icons/icon-192.png', './icons/icon-512.png'];
-self.addEventListener('install', e => e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
-self.addEventListener('activate', e => e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())));
-self.addEventListener('fetch', e => {
-  const r=e.request, u=new URL(r.url); if(r.method!=='GET'||u.origin!==self.location.origin||u.pathname.includes('/api/')) return;
-  if(r.mode==='navigate') { e.respondWith(fetch(r).then(res=>{if(res.ok){const c=res.clone();caches.open(CACHE_NAME).then(cache=>cache.put('./index.html',c));}return res;}).catch(()=>caches.match('./index.html').then(c=>c||caches.match('./')))); return; }
-  e.respondWith(caches.match(r).then(c=>c||fetch(r).then(res=>{if(res.ok&&res.type==='basic'){const copy=res.clone();caches.open(CACHE_NAME).then(cache=>cache.put(r,copy));}return res;})));
+const CACHE_NAME = 'moi-market-pro-shell-v2';
+const SHELL = [
+  './', './index.html', './dashboard.html', './roles-portal.html',
+  './roles-portal.css', './roles-portal.js', './roles-integration.js',
+  './manifest.webmanifest', './icons/app-icon.svg', './icons/icon-192.png', './icons/icon-512.png'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin || url.pathname.includes('/api/')) return;
+
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request).then(response => {
+        if (response.ok && response.type === 'basic') {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+        }
+        return response;
+      }).catch(async () => {
+        const cachedPage = await caches.match(request);
+        if (cachedPage) return cachedPage;
+        const isRolePage = url.pathname.endsWith('/roles-portal.html');
+        return (await caches.match(isRolePage ? './roles-portal.html' : './index.html')) || Response.error();
+      })
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cached => cached || fetch(request).then(response => {
+      if (response.ok && response.type === 'basic') {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+      }
+      return response;
+    }))
+  );
 });
