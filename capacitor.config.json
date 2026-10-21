@@ -1,0 +1,7 @@
+{
+  "appId": "kg.moymarket.pro.system",
+  "appName": "MOI MARKET PRO",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": { "allowMixedContent": false }
+}
