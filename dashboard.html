@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061326">
+  <title>MOI MARKET PRO — Business Control Center</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="MOI MARKET PRO">
+        <span class="brand-icon" data-icon="bag"></span>
+        <span class="brand-copy"><b>MOI MARKET <em>PRO</em></b><small>БИЗНЕС БАШКАРУУ ПЛАТФОРМАСЫ</small></span>
+      </a>
+      <div class="side-caption">НЕГИЗГИ МЕНЮ</div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="branch-status"><span class="branch-status-icon" data-icon="building"></span><span><b>Бишкек филиалы</b><small><i class="online-dot"></i> Онлайн</small></span><span class="chevron">›</span></div>
+        <button class="profile" id="profileBtn"><span class="avatar">A</span><span><b>Администратор</b><small>Системанын админи</small></span><span class="profile-gear" data-icon="settings"></span></button>
+        <div class="version">MOI MARKET PRO v1.0.0 <span>●</span> Бизнести ар дайым колдоо</div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button mobile-only" id="menuBtn" aria-label="Меню" data-icon="menu"></button>
+        <label class="global-search"><span data-icon="search"></span><input id="globalSearch" placeholder="Товарларды, заказдарды, кардарларды издөө..."></label>
+        <div class="top-actions">
+          <button class="date-chip"><span data-icon="calendar"></span><span><b>Бүгүн</b><small id="todayDate"></small></span></button>
+          <button class="notification" aria-label="Билдирүүлөр"><span data-icon="bell"></span><i>3</i></button>
+          <button class="user-menu"><span class="avatar">A</span><span><b>Администратор</b><small>Систем админ</small></span><span data-icon="chevron-down"></span></button>
+        </div>
+      </header>
+      <section class="content" id="content"></section>
+      <nav class="mobile-nav" id="mobileNav"></nav>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
