@@ -44,9 +44,9 @@
 }
 
 
-/* Android standalone/WebView status-bar overlap fix */
+/* Android: статус тилкесинен туура аралык */
 @media (max-width: 700px) {
   body {
-    padding-top: 0 !important;
+    padding-top: max(env(safe-area-inset-top, 0px), 24px) !important;
   }
 }
