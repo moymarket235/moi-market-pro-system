@@ -47,6 +47,6 @@
 /* Android standalone/WebView status-bar overlap fix */
 @media (max-width: 700px) {
   body {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 58px);
+    padding-top: 0 !important;
   }
 }
