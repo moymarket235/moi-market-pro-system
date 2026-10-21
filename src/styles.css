@@ -2,3 +2,69 @@
 @media(max-width:1200px){.sidebar{width:220px}.main{margin-left:220px}.content{padding-left:22px;padding-right:22px}.topbar{padding:0 22px}.demo{margin-left:22px;margin-right:22px}.metrics{gap:9px}.metric{padding:13px}.columns{grid-template-columns:1fr}.branch-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.sidebar{width:260px;transform:translateX(-105%);transition:transform .22s;box-shadow:none}.sidebar.open{transform:translateX(0);box-shadow:20px 0 65px #0009}.main{margin-left:0;padding-bottom:80px}.topbar{height:69px;padding:0 13px}.topbar h1{font-size:15px}.top-left{gap:10px}.menu{display:grid;place-items:center;width:35px;height:35px;border-radius:9px;background:#102334;border:1px solid #304558;color:#e4eff7;font-size:17px}.date{display:none}.top-avatar{width:32px;height:32px}.demo{margin:13px 12px 0;padding:10px;font-size:9px;align-items:flex-start}.content{padding:18px 12px 26px}.page-title{align-items:flex-start;flex-direction:column;gap:11px;margin-bottom:15px}.page-title h2{font-size:21px}.page-title p{font-size:10px}.page-title>.primary,.page-title>.secondary{width:100%}.welcome{padding:20px 16px;min-height:145px;margin-bottom:12px}.welcome h2{font-size:18px;max-width:275px}.welcome p{font-size:9px;line-height:1.5;max-width:250px}.welcome>small{font-size:7px}.welcome-logo{width:58px;height:58px;border-radius:18px;font-size:16px;right:13px;top:auto;bottom:14px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px}.metrics-3{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics-3 .metric:last-child{grid-column:1/-1}.metric{padding:12px;border-radius:11px}.metric-head{font-size:9px}.symbol{width:26px;height:26px;font-size:12px}.metric>strong{font-size:17px;margin:11px 0 7px}.metric>small{font-size:8px}.columns{gap:11px}.columns .panel,.table-panel{padding:13px}.panel h3{font-size:12px}.panel-head p{font-size:8px}.chart{height:135px;gap:9px}.bar-wrap small{font-size:7px}.branch-row{gap:7px;padding:10px 0}.branch-icon{flex-basis:29px;width:29px;height:29px}.branch-name b,.branch-value b{font-size:8px}.branch-name small,.branch-value small{font-size:7px}.table-panel{margin-top:12px}.toolbar{align-items:stretch;flex-direction:column}.search{max-width:none;width:100%}.toolbar>.secondary{align-self:flex-start}.table-scroll{margin-top:11px}table{font-size:9px}th,td{padding:10px 8px}.branch-cards{grid-template-columns:1fr}.report-grid{gap:8px}.report-grid article{padding:11px}.report-grid p{font-size:9px}.padded{padding:15px}.settings>p{font-size:9px}.bottom-nav{position:fixed;display:flex;align-items:stretch;justify-content:space-around;gap:2px;inset:auto 0 0;z-index:30;padding:7px 4px calc(7px + env(safe-area-inset-bottom));background:#081925f7;border-top:1px solid #263d4f;backdrop-filter:blur(16px)}.bottom-nav button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:2px 0}.bottom-nav button span{font-size:15px}.bottom-nav button small{font-size:7px}.bottom-nav button.active{color:var(--green)}.toast{right:10px;bottom:84px}.form-row{gap:8px}.modal{padding:15px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* MOI MARKET PRO — Modern Blue Design */
+:root {
+  --bg: #06111f;
+  --panel: #0b1b2d;
+  --line: #1d3852;
+  --blue: #36a9ff;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 70% 0%, #123d62, transparent 45%),
+    var(--bg);
+}
+
+.nav-btn {
+  min-height: 48px;
+  font-size: 14px;
+  gap: 12px;
+  border-radius: 12px;
+}
+
+.nav-btn.active {
+  background: linear-gradient(100deg, #123d5a, #102c42);
+  border-color: #23618a;
+  box-shadow: inset 3px 0 #39b7ff;
+}
+
+.page-title h2 {
+  font-size: 24px;
+}
+
+.page-title p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.table-scroll td {
+  font-size: 13px;
+}
+
+.demo {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.welcome p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.primary,
+.secondary {
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .content {
+    padding: 18px 14px 32px;
+  }
+
+  .nav-btn {
+    font-size: 14px;
+  }
+}
