@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061326">
+  <title>MOI MARKET PRO — Роли и профиль</title>
+  <link rel="stylesheet" href="./roles-portal.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main id="app" class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><span><b>MOI MARKET <em>PRO</em></b><small>СИСТЕМА УПРАВЛЕНИЯ</small></span></div>
+      <div class="top-note"><span class="live-dot"></span> Модуль ролей и профилей</div>
+    </header>
+    <section id="loginView" class="login-layout view">
+      <div class="intro"><span class="eyebrow">ЕДИНАЯ ПЛАТФОРМА</span><h1>Разные роли.<br><span>Одна система.</span></h1><p>Персональная панель для каждого сотрудника и доступ только к нужным разделам.</p>
+        <div class="intro-points"><div><i>✓</i><span>Профиль сотрудника</span></div><div><i>✓</i><span>Выбор магазина</span></div><div><i>✓</i><span>Интерфейс по роли</span></div></div>
+      </div>
+      <form class="panel login-card" id="loginForm">
+        <div class="panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h2>Вход в систему</h2><p class="muted">Введите данные для демонстрационного просмотра</p>
+        <label class="field-label" for="loginEmail">Электронная почта</label><div class="input-wrap"><span class="field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><input id="loginEmail" type="email" autocomplete="username" value="demo@moimarket.kg" required></div>
+        <label class="field-label" for="loginPassword">Пароль</label><div class="input-wrap"><span class="field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="loginPassword" type="password" autocomplete="current-password" value="demo12345" required><button class="eye" type="button" data-toggle="loginPassword" aria-label="Показать пароль" title="Показать или скрыть пароль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+        <div class="form-row"><label class="check"><input type="checkbox" checked> Запомнить меня</label><button id="forgotBtn" type="button" class="link-btn">Забыли пароль?</button></div>
+        <button class="primary-btn" type="submit">Войти <span>→</span></button>
+        <div class="demo-note"><b>Демо-режим</b><span>Кнопка открывает макет панелей. Настоящая проверка пароля пока не подключена.</span></div>
+      </form>
+    </section>
+    <section id="roleView" class="view hidden">
+      <div class="section-heading"><div><span class="eyebrow">ШАГ 1 · ВЫБОР ДОСТУПА</span><h1>Выберите свою роль</h1><p>Каждая роль получает свой набор разделов и возможностей.</p></div><button class="ghost-btn" data-action="logout">← Выйти</button></div>
+      <div id="roleGrid" class="role-grid"></div>
+      <div class="store-pick panel"><div><span class="kicker">ВАШ МАГАЗИН</span><h2>Выберите филиал</h2><p class="muted">Руководителю и бухгалтерии доступен выбор всех магазинов в демо.</p></div><label class="select-wrap"><span>Филиал</span><select id="storeSelect"></select></label></div>
+      <div class="bottom-actions"><span id="roleHint" class="muted">Выберите роль, чтобы продолжить</span><button id="continueBtn" class="primary-btn" disabled>Открыть панель <span>→</span></button></div>
+    </section>
+    <section id="dashboardView" class="view hidden">
+      <div class="dash-head"><div><span class="eyebrow">ПЕРСОНАЛЬНАЯ ПАНЕЛЬ</span><h1 id="dashTitle">Руководитель</h1><p id="dashSubtitle" class="muted">Обзор доступных разделов</p></div><div class="head-actions"><button class="ghost-btn" data-action="profile">Мой профиль</button><button class="ghost-btn" data-action="roles">Сменить роль</button></div></div>
+      <div class="user-strip panel"><div class="avatar" id="avatar">АИ</div><div class="user-main"><b id="userFullName">Азамат Исаев</b><span id="userRoleLabel">Руководитель</span></div><div class="store-pill"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9M9 20v-6h6v6"/></svg></span><div><small>Мой магазин</small><b id="dashStore">Бейшеналиева 20</b></div><button data-action="stores" aria-label="Выбрать магазин"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></div>
+      <div id="metricGrid" class="metric-grid"></div>
+      <div class="section-row"><div><h2>Доступные разделы</h2><p class="muted">Список зависит от выбранной роли</p></div></div>
+      <div id="moduleGrid" class="module-grid"></div>
+      <div class="panel profile-summary"><div><span class="kicker">УЧЁТНАЯ ЗАПИСЬ</span><h2>Личные данные</h2><p class="muted">Редактируйте имя, фамилию, телефон и электронную почту.</p></div><button class="primary-btn compact" data-action="profile">Изменить профиль <span>→</span></button><div class="profile-summary-data"><span><small>Телефон</small><b id="summaryPhone">+996 700 123 456</b></span><span><small>Электронная почта</small><b id="summaryEmail">demo@moimarket.kg</b></span><span><small>Магазин</small><b id="summaryStore">Бейшеналиева 20</b></span></div></div>
+    </section>
+    <section id="profileView" class="view hidden">
+      <div class="section-heading"><div><span class="eyebrow">НАСТРОЙКИ АККАУНТА</span><h1>Профиль пользователя</h1><p>Измените свои контактные данные.</p></div><button class="ghost-btn" data-action="dashboard">← Назад к панели</button></div>
+      <form id="profileForm" class="profile-layout">
+        <article class="panel profile-card"><div class="avatar avatar-large" id="profileAvatar">АИ</div><h2 id="profileNamePreview">Азамат Исаев</h2><span id="profileRolePreview" class="role-chip">Руководитель</span><p class="muted">Персональная учётная запись</p><div class="security-line"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><div><b>Защита профиля</b><small>Изменения сохраняются только в этом демо-браузере.</small></div></div></article>
+        <article class="panel profile-form-card"><div class="panel-title"><div><h2>Личная информация</h2><p class="muted">Нажмите поле, чтобы изменить данные.</p></div><span class="edit-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15l0 5Z"/></svg>Редактирование</span></div>
+          <div class="form-grid"><div><label class="field-label" for="firstName">Имя</label><div class="editable"><input id="firstName" name="firstName" required><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15l0 5Z"/></svg></span></div></div><div><label class="field-label" for="lastName">Фамилия</label><div class="editable"><input id="lastName" name="lastName" required><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15l0 5Z"/></svg></span></div></div><div><label class="field-label" for="phone">Номер телефона</label><div class="editable"><input id="phone" name="phone" type="tel" placeholder="+996 ..." required><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15l0 5Z"/></svg></span></div></div><div><label class="field-label" for="email">Электронная почта</label><div class="editable"><input id="email" name="email" type="email" required><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15l0 5Z"/></svg></span></div></div></div>
+          <div class="divider"></div><div class="panel-title"><div><h2>Мой магазин</h2><p class="muted">Выберите филиал, к которому привязан профиль.</p></div></div><label class="field-label" for="profileStore">Филиал</label><div class="input-wrap"><span class="field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10 12 3l9 7"/><path d="M5 9v11h14V9M9 20v-6h6v6"/></svg></span><select id="profileStore" name="store"></select></div>
+          <div class="divider"></div><div class="panel-title"><div><h2>Сменить пароль</h2><p class="muted">Демо-форма: сохранение пароля к серверу не выполняется.</p></div></div><label class="field-label" for="newPassword">Новый пароль</label><div class="input-wrap"><span class="field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="newPassword" type="password" minlength="8" placeholder="Не менее 8 символов"><button class="eye" type="button" data-toggle="newPassword" aria-label="Показать пароль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><label class="field-label" for="confirmPassword">Повторите новый пароль</label><div class="input-wrap"><span class="field-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="confirmPassword" type="password" minlength="8" placeholder="Повторите пароль"><button class="eye" type="button" data-toggle="confirmPassword" aria-label="Показать пароль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+          <div class="form-actions"><span id="profileMessage" class="muted" role="status"></span><button type="submit" class="primary-btn">Сохранить изменения <span>✓</span></button></div>
+        </article>
+      </form>
+    </section>
+    <section id="storesView" class="view hidden">
+      <div class="section-heading"><div><span class="eyebrow">ТОРГОВАЯ СЕТЬ</span><h1>Выбор магазина</h1><p>Выберите филиал для персональной панели.</p></div><button class="ghost-btn" data-action="dashboard">← Назад</button></div>
+      <div id="storesGrid" class="stores-grid"></div>
+      <div class="bottom-actions"><span id="storeHint" class="muted">Текущий магазин отмечен</span><button id="saveStoreBtn" class="primary-btn">Сохранить магазин <span>✓</span></button></div>
+    </section>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer class="footer"><span>MOI MARKET <b>PRO</b></span><span><i class="live-dot"></i> Демо-концепция ролевой системы</span></footer>
+  </main>
+  <script src="./roles-portal.js" defer></script>
+</body>
+</html>
