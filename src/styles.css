@@ -174,3 +174,73 @@ select:focus-visible {
     font-size: 12px;
   }
 }
+
+/* MOI MARKET PRO — Modern Blue / Cyan UI Pack
+   Append this file to the END of src/styles.css. */
+
+:root {
+  --bg:#06111f; --panel:#0b1b2d; --line:#1d3852; --muted:#9bb0c4;
+  --green:#39d5ff; --blue:#36a9ff; --purple:#a78bfa;
+  --orange:#ffbf69; --red:#ff718a;
+}
+html { background:var(--bg); }
+body {
+ color:#edf6ff;
+ background:radial-gradient(ellipse at 76% 0%,rgba(18,61,98,.95),transparent 43%),
+ radial-gradient(ellipse at 0% 35%,rgba(24,65,101,.28),transparent 34%),#06111f;
+}
+button,input,select { -webkit-tap-highlight-color:transparent; }
+button:focus-visible,input:focus-visible,select:focus-visible {
+ outline:2px solid #39d5ff; outline-offset:3px; box-shadow:0 0 0 4px rgba(57,213,255,.13);
+}
+.sidebar { background:rgba(5,17,31,.97); border-right:1px solid #1b4260; }
+.brand-mark,.boot-mark { background:linear-gradient(145deg,#39d5ff,#1767e8); box-shadow:0 0 26px #168bff40; }
+.brand small,.top-left small,.modal-head small { color:#39d5ff; }
+.nav-btn { min-height:46px; border:1px solid transparent; border-radius:12px; font-size:13px; transition:background .18s,border-color .18s; }
+.nav-btn:hover { background:#10283d; border-color:#1d4969; }
+.nav-btn.active { color:#e7f7ff; background:linear-gradient(100deg,#123d5a,#10283f); border-color:#23618a; box-shadow:inset 3px 0 #39d5ff,0 6px 20px #0078dc1a; }
+.nav-btn.active span { color:#39d5ff; }
+.topbar { background:rgba(6,19,33,.92); border-bottom-color:#1b3850; }
+.date,.secondary { background:#10243a; border-color:#2a4965; }
+.primary { color:#031827; background:linear-gradient(120deg,#39d5ff,#3985ff); border-color:#82dcff59; box-shadow:0 5px 20px #168bff33; }
+.primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.secondary:hover { border-color:#39a9df; background:#142d46; }
+.welcome { background:radial-gradient(circle at 85% 15%,#164d83,transparent 38%),linear-gradient(110deg,#0d263e,#0a1b2d); border-color:#235782; box-shadow:0 14px 36px #0003; }
+.welcome>small,.welcome h2 span { color:#39d5ff; }
+.welcome-logo { background:linear-gradient(145deg,#1767a8,#102b52); border-color:#39baff80; box-shadow:0 0 30px #168bff33; }
+.metric,.panel { background:linear-gradient(145deg,#10243a,#0a1929); border-color:#1d3852; box-shadow:0 8px 26px #0002; }
+.metric { border-radius:15px; transition:transform .18s,border-color .18s; }
+.metric:hover { transform:translateY(-2px); border-color:#2c5a7b; }
+.metric-head { font-size:11px; }
+.metric>strong { font-size:clamp(19px,1.7vw,25px); }
+.symbol { width:34px; height:34px; border-radius:11px; }
+.symbol.green,.branch-icon { color:#39d5ff; background:#10334b; }
+.symbol.blue { color:#60a5fa; background:#172f49; }
+.symbol.purple { color:#c4a7ff; background:#2b2347; }
+.symbol.orange { color:#ffbf69; background:#3a2f1d; }
+.symbol.red { color:#ff8298; background:#41242e; }
+.chart { background:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,#1d3449 32px,#1d3449 33px); border-bottom-color:#28445d; }
+.bar { background:linear-gradient(180deg,#39d5ff,#2868ef); box-shadow:0 0 15px #168bff3d; }
+.branch-row { border-bottom-color:#203b51; }
+.branch-icon { border-radius:11px; }
+.table-panel { border-radius:15px; }
+th { background:#142a3f; color:#a3bad0; }
+td { border-bottom-color:#1e3348; }
+tbody tr:hover td { background:#2a6fa014; }
+.search,.modal input,.modal select { background:#081925; border-color:#2a4965; }
+.search:focus,.modal input:focus,.modal select:focus { border-color:#39d5ff; }
+.stock { background:#10334b; color:#70dcff; }
+.status.done { color:#70e2ff; background:#12364a; }
+.bottom-nav { background:rgba(7,21,35,.97); border-top-color:#1d3852; }
+.bottom-nav button.active { color:#39d5ff; }
+.toast.show { box-shadow:0 12px 38px #0006; }
+@media(max-width:720px) {
+ .content { padding:18px 13px 28px; }
+ .page-title h2 { font-size:23px; }
+ .page-title p { font-size:12px; }
+ .welcome p { font-size:11px; line-height:1.55; }
+ .metric>strong { font-size:19px; }
+ .primary,.secondary { min-height:42px; font-size:12px; }
+ .nav-btn { font-size:14px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; } }
