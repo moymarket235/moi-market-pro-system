@@ -4,67 +4,173 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 
 
-/* MOI MARKET PRO — Modern Blue Design */
+/* MOI MARKET PRO — PREMIUM BLUE CYAN */
+
 :root {
   --bg: #06111f;
   --panel: #0b1b2d;
   --line: #1d3852;
+  --muted: #9bb0c4;
+  --green: #39d5ff;
   --blue: #36a9ff;
+  --purple: #a78bfa;
+  --orange: #ffbf69;
+  --red: #ff718a;
 }
 
 body {
   background:
-    radial-gradient(ellipse at 70% 0%, #123d62, transparent 45%),
-    var(--bg);
+    radial-gradient(ellipse at 75% 0%, #123e67 0%, transparent 45%),
+    #06111f;
+}
+
+.sidebar {
+  background: #071321f7;
+  border-right-color: #1b4260;
+}
+
+.brand-mark,
+.boot-mark {
+  background: linear-gradient(145deg, #39d5ff, #1767e8);
+  box-shadow: 0 0 24px #168bff30;
+}
+
+.brand small,
+.top-left small,
+.modal-head small {
+  color: #39d5ff;
 }
 
 .nav-btn {
-  min-height: 48px;
-  font-size: 14px;
-  gap: 12px;
+  min-height: 46px;
   border-radius: 12px;
+  font-size: 13px;
+  transition: background .2s, border-color .2s;
 }
 
 .nav-btn.active {
-  background: linear-gradient(100deg, #123d5a, #102c42);
+  color: #e7f7ff;
+  background: linear-gradient(100deg, #123d5a, #10283f);
   border-color: #23618a;
-  box-shadow: inset 3px 0 #39b7ff;
+  box-shadow: inset 3px 0 #39d5ff;
 }
 
-.page-title h2 {
-  font-size: 24px;
+.nav-btn.active span {
+  color: #39d5ff;
 }
 
-.page-title p {
-  font-size: 13px;
-  line-height: 1.5;
+.topbar {
+  background: #061321ed;
+  border-bottom-color: #1b3850;
 }
 
-.table-scroll td {
-  font-size: 13px;
-}
-
-.demo {
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.welcome p {
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.primary,
+.date,
 .secondary {
-  font-size: 12px;
+  background: #10243a;
+  border-color: #2a4965;
 }
 
-@media (max-width: 700px) {
-  .content {
-    padding: 18px 14px 32px;
+.primary {
+  color: #031827;
+  background: linear-gradient(120deg, #39d5ff, #3985ff);
+  box-shadow: 0 5px 20px #168bff25;
+}
+
+.welcome {
+  background:
+    radial-gradient(circle at 85% 15%, #164d83, transparent 38%),
+    linear-gradient(110deg, #0d263e, #0a1b2d);
+  border-color: #235782;
+}
+
+.welcome > small,
+.welcome h2 span {
+  color: #39d5ff;
+}
+
+.welcome-logo {
+  background: linear-gradient(145deg, #1767a8, #102b52);
+  border-color: #39baff80;
+  box-shadow: 0 0 30px #168bff20;
+}
+
+.metric,
+.panel {
+  background: linear-gradient(145deg, #10243a, #0a1929);
+  border-color: #1d3852;
+}
+
+.symbol.green,
+.branch-icon {
+  color: #39d5ff;
+  background: #10334b;
+}
+
+.symbol.blue {
+  color: #60a5fa;
+  background: #172f49;
+}
+
+.metric > strong {
+  font-size: clamp(18px, 1.7vw, 24px);
+}
+
+.chart {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    #1d3449 32px,
+    #1d3449 33px
+  );
+  border-bottom-color: #28445d;
+}
+
+.bar {
+  background: linear-gradient(180deg, #39d5ff, #2868ef);
+  box-shadow: 0 0 15px #168bff30;
+}
+
+.stock {
+  background: #10334b;
+  color: #70dcff;
+}
+
+.bottom-nav {
+  background: #071523f7;
+  border-top-color: #1d3852;
+}
+
+.bottom-nav button.active {
+  color: #39d5ff;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline-color: #39d5ff;
+}
+
+@media (max-width: 720px) {
+  .page-title h2 {
+    font-size: 23px;
   }
 
-  .nav-btn {
-    font-size: 14px;
+  .page-title p {
+    font-size: 12px;
+  }
+
+  .welcome p {
+    font-size: 11px;
+  }
+
+  .metric > strong {
+    font-size: 19px;
+  }
+
+  .primary,
+  .secondary {
+    min-height: 42px;
+    font-size: 12px;
   }
 }
