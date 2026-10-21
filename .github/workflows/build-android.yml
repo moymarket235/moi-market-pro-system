@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['src/**','public/**','index.html','package.json','package-lock.json','capacitor.config.json','vite.config.js','.github/workflows/build-android.yml']
+    paths: ['src/**''public/**','index.html','dashboard.html','package.json','capacitor.config.json','vite.config.js','.github/workflows/build-android.yml']
 permissions:
   contents: read
 jobs:
