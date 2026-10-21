@@ -1,24 +1,9 @@
 {
-  "name": "moi-market-pro-system",
-  "version": "0.1.0",
+  "name": "moi-market-pro-modern-ui",
+  "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "description": "MOI MARKET PRO — система управления магазинами",
+  "description": "MOI MARKET PRO modern dashboard UI prototype",
   "scripts": {
-    "icons": "node scripts/generate-icons.mjs",
-    "predev": "npm run icons",
-    "dev": "vite --host 0.0.0.0",
-    "prebuild": "npm run icons",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
-  },
-  "dependencies": {
-    "@capacitor/android": "^7.4.3",
-    "@capacitor/core": "^7.4.3"
-  },
-  "devDependencies": {
-    "@capacitor/cli": "^7.6.9",
-    "sharp": "^0.33.5",
-    "vite": "^6.4.1"
+    "serve": "python3 -m http.server 8080"
   }
 }
