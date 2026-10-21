@@ -100,7 +100,13 @@
   $('forgotBtn').addEventListener('click',()=>toast('В демо-режиме восстановление пароля не подключено'));
   document.querySelectorAll('[data-toggle]').forEach(b=>b.addEventListener('click',()=>{const inp=$(b.dataset.toggle);const showPassword=inp.type==='password';inp.type=showPassword?'text':'password';b.setAttribute('aria-label',showPassword?'Скрыть пароль':'Показать пароль');b.title=showPassword?'Скрыть пароль':'Показать пароль';b.style.color=showPassword?'var(--cyan)':''}));
   $('storeSelect').addEventListener('change',e=>{state.store=Number(e.target.value)});
-  $('continueBtn').addEventListener('click',()=>{if(!state.role)return;state.store=Number($('storeSelect').value||state.store);renderDashboard();show('dashboardView')});
+  $('continueBtn').addEventListener('click',()=>{
+  if(!state.role)return;
+  state.store=Number($('storeSelect').value||state.store);
+  if(state.role==='manager')return;
+  renderDashboard();
+  show('dashboardView');
+});
   $('profileForm').addEventListener('submit',e=>{e.preventDefault();const firstName=$('firstName').value.trim(),lastName=$('lastName').value.trim(),phone=$('phone').value.trim(),email=$('email').value.trim(),p1=$('newPassword').value,p2=$('confirmPassword').value;if(!firstName||!lastName||!phone||!email){$('profileMessage').textContent='Заполните все обязательные поля';return}if(p1||p2){if(p1.length<8){$('profileMessage').textContent='Пароль должен содержать не менее 8 символов';return}if(p1!==p2){$('profileMessage').textContent='Пароли не совпадают';return}}state.user={firstName,lastName,phone,email};state.store=Number($('profileStore').value||state.store);try{localStorage.setItem('mmp-demo-profile',JSON.stringify(state.user));localStorage.setItem('mmp-demo-store',String(state.store))}catch{}$('profileMessage').textContent='Данные демо-профиля сохранены';renderDashboard();toast('Профиль обновлён (демо)')});
   $('saveStoreBtn').addEventListener('click',()=>{state.store=state.pendingStore;try{localStorage.setItem('mmp-demo-store',String(state.store))}catch{}renderDashboard();show('dashboardView');toast(`Выбран магазин: ${currentStore().name}`)});
   document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.action)));
