@@ -1,18 +1,19 @@
+
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#061326">
-  <meta http-equiv="refresh" content="0;url=./roles-portal.html">
-  <title>MOI MARKET PRO — Вход в систему</title>
+  <title>MOI MARKET PRO</title>
   <script>
-    (() => {
-      // Start SW registration in the background; never wait for it before opening the portal.
-      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
-      window.location.replace(new URL('./roles-portal.html', document.baseURI).href);
-    })();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+    window.location.replace(
+      new URL('./roles-portal.html', window.location.href).href
+    );
   </script>
 </head>
-<body style="margin:0;background:#041124"></body>
+<body></body>
 </html>
