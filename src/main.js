@@ -30,7 +30,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 function toast(msg){const el=document.querySelector('#toast');if(!el)return;el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3000);}
 function go(id){page=id;document.querySelector('#sidebar')?.classList.remove('open');render();window.scrollTo({top:0,behavior:'smooth'});}
 function metric(name,value,detail,icon,tone){return `<article class="metric"><div class="metric-head"><span>${name}</span><b class="symbol ${tone}">${icon}</b></div><strong>${value}</strong><small>${detail}</small></article>`;}
-function title(h,p,button=''){document.querySelector('#page-title').textContent=h;return `<div class="page-title"><div><h2>${h}</h2><p>${p}</p></div>${button}</div>`;}
+function title(h,p,button=''){return `<div class="page-title"><div><h2>${h}</h2><p>${p}</p></div>${button}</div>`;}
 function dashboard(){let sales=branches.reduce((s,b)=>s+b.sales,0),stock=branches.reduce((s,b)=>s+b.stock,0);return `${title('Обзор магазина','Показатели сети и состояние филиалов','<button class="primary" id="install">↓ Установить приложение</button>')}
   <section class="welcome"><small>ЕДИНАЯ СИСТЕМА УПРАВЛЕНИЯ</small><h2>Добро пожаловать в <span>MOI MARKET PRO</span></h2><p>Контролируйте товары, склад, команды и отчётность в одном месте.</p><div class="welcome-logo">MM</div></section>
   <div class="metrics">${metric('Продажи за сегодня',money(sales),'Пример оборота','↗','green')}${metric('Товарные позиции','1 580','Демо-каталог','▣','blue')}${metric('Остаток на складе',stock.toLocaleString('ru-RU'),'Пример по сети','▤','purple')}${metric('Активные филиалы','5 из 5','Макет сети','⌂','orange')}</div>
